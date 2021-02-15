@@ -17,8 +17,10 @@ class BookListView(generic.ListView):
     template_name = 'app1/book_list.html'
 class BookDetailView(generic.ListView):
     model=models.Book
-    template_name ='app1/books_detail.html'
-
+    template_name ='app1/book_detail.html'
+class AuthorListView(generic.ListView):
+    model=models.Author
+    template_name = 'app1/author_list.html'
 
 
 # Create your views here.

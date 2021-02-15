@@ -24,8 +24,8 @@
       <ul class="sidebar-nav">
           <li><a href="/admin/">Admin page</a></li>
           <li><a href="{% url 'app1:index' %}">Home</a></li>
-          <li><a href="">All books</a></li>
-          <li><a href="">All authors</a></li>
+          <li><a href="{% url 'app1:books' %}">All books</a></li>
+          <li><a href="{% url 'app1:authors' %}">All authors</a></li>
       </ul>
      {% endblock %}
       </div>

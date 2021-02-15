@@ -2,7 +2,7 @@ from django.urls import reverse
 from django.db import models
 import uuid
 class Genre(models.Model):
-    name=models.CharField(max_length=300,help_text='enter a bokk genre')
+    name=models.CharField(max_length=300,help_text='enter a book genre')
     def __str__(self):
         return self.name
 
