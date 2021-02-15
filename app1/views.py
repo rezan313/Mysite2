@@ -1,18 +1,24 @@
 from django.shortcuts import render
 from .models import Book,Author,BookInstance,Genre
+from django.views import generic
+from . import models
 
-def index(request):
-    num_books=Book.objects.all().count()
-    num_instance=BookInstance.objects.all().count()
-    num_instance_available=BookInstance.objects.filter(status__exact='a').count()
-    num_authors=Author.objects.count()
+class index(generic.TemplateView):
+    template_name = 'app1/index.html'
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context['num_books']=models.Book.objects.all().count()
+        context['num_instance']=models.BookInstance.objects.count()
+        context['num_instance_available']=models.BookInstance.objects.filter(status__exact='a').count()
+        context['num_authors'] = models.BookInstance.objects.filter(status__exact='a').count()
+        return context
+class BookListView(generic.ListView):
+    model=models.Book
+    template_name = 'app1/book_list.html'
+class BookDetailView(generic.ListView):
+    model=models.Book
+    template_name ='app1/books_detail.html'
 
-    return render(
-        request,'app1/index.html',
-        context={'num_books': num_books,'num_instance':num_instance,
-                 'num_instance_available':num_instance_available,'num_authors':num_authors}
-
-    )
 
 
 # Create your views here.

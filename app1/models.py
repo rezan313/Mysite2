@@ -15,10 +15,14 @@ class Book(models.Model):
     def __str__(self):
         return self.title
     def get_absolute_url(self):
-        return reverse('book-detail',args=[str(self.id)])
+        return reverse('app1:book_detail',args=[str(self.id)])
+    def display_genre(self):
+        return  reverse('app1:book_detail',args=[str(self.id)])
+    display_genre.short_description = 'Genre'
 class BookInstance(models.Model):
     id=models.UUIDField(primary_key=True,default=uuid.uuid4,help_text='uniq Id for this')
     book=models.ForeignKey('book',on_delete=models.SET_NULL,null=True)
+    imprint=models.CharField('imprint',max_length=300,null=True,blank=True)
     due_back=models.DateField(null=True,blank=True)
     LOAN_STATUS =   (
         ('m','Maintenance'),
@@ -37,6 +41,6 @@ class Author(models.Model):
     date_of_birth=models.DateField(null=True,blank=True)
     date_of_death = models.DateField('died',null=True, blank=True)
     def get_absolute_url(self):
-        return reverse('author-detail',args=[str(self.id)])
+        return reverse('app1:author_detail',args=[str(self.id)])
     def __str__(self):
-        return  '%S,%S' %(self.last_name,self.first_name)
+        return '%s , %s'%(self.first_name,self.last_name)
