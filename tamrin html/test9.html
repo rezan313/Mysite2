@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <form action="server.py" method="GET">
+            <fieldset>
+                <legend>personal information</legend>   
+           FirstName <input type="text" id="txtFirstname" name="txtFirstName" style="height: 10px;" />
+                <input type="button" value="Clike Me"  /><br/>
+                <input type="checkbox" value=""/>RemeberMe<br/>
+                <input type="radio" name="rdbGender" value="M"/>
+                <input type="radio" name="rdbGender" value="F"/><br/>
+                password<input type="password" id="pwdpass"/><br/>
+                <input type="reset" value="reset"><br/>
+                <input type="submit" value="send"><br/>
+                <textarea cols="30" rows="10"></textarea><br/>
+                <select>
+                    <option value="1">tehran</option>
+                    <option value="2">isfehan</option>
+                    <option value="3">karaj</option>
+                </select>
+                <br/>
+                <input type="text" id="txtBrowsers" list="browser">
+                <datalist id="browser">
+                    <option value="chorome"></option>
+                    <option value="mozila"></option>
+                    <option value="quera"></option>
+                </datalist><br/>
+                <input type="number" min="1" max="10">
+                <input type="color">
+                <input type="date">
+                <input type="range">
+                
+            </fieldset>
+        </form>
+    </body>
+</html>

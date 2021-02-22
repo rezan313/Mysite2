@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>test13</title>
+    </head>
+    <body>
+        <form>
+            <input type="color" name="usercolor" id= "inpcolor"><br>
+            <input type="button" value="setcolor" id="colorbtn" onclick="changecolor()">
+        </form>
+        <p id="colorful">faradars.org html course</p>
+        <script>
+            function changecolor(){
+                document.getElementById("colorful").style.backgroundColor=document.getElementById("inpcolor").value;
+            }
+        </script>
+        <hr>
+        <form>
+                <input type="date"  id="inpdate"><br>
+                <input type="button" id="datentn" value="set date" onclick="changedate()">
+        </form>
+        <p id="demo">faradars.org html 5 course</p>
+        <script>
+            function changedate()
+            {
+                document.getElementById("demo").innerHTML="record Time"+document.getElementById("inpdate").value;
+
+
+            }
+        </script>
+        <hr>
+        <form>
+            <input type="email"  id="inpemail"><br>
+            <input type="button" id="emailbtn" value="show email" onclick="showEmail()">
+            <p id="demo1">Faradas.Org HTML 5 Course</p>
+        </form>
+            <script>
+                function showEmail(){
+                    document.getElementById("demo1").innerHTML="you email adrees:"+ document.getElementById("inpemail").value;
+
+
+                }
+            </script>
+            <hr>
+            <form>
+                <input type="month" id="inpmounth">
+                <input type="button" value="show month" onclick="showmonth()">
+            </form>
+                <p id="demo2">FAradscdcvd</p>
+                <script>
+                    function showmonth(){
+                        document.getElementById("demo2").innerHTML="month is:"+
+                        document.getElementById("inpmounth").value;
+
+
+                    }
+                </script>
+            <hr>
+            <form>
+                <input type="search" id="inpsearch">
+                <input type="submit" value="search" >
+            </form>
+            <hr>
+            <form>
+               
+    </body>
+</html>

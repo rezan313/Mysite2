@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_Mmr76b-5umVJOu9mRuQsari_XEoXyrd3Q&usqp=CAU" type="image/x-icon" />
+        <title>Title </title>
+    <script>
+        function dragstart(event){
+            event.dataTransfer.setData("Text",event.target.id);
+        }
+        function dragfinish(event){
+            event.preventDefault();
+
+        }
+        function dropstart(event){
+            var date=event.dataTransfer.getData("Text");
+            event.target.appendChild(document.getElementById(data);
+            event.preventDefault();
+        }
+
+    </script>
+    </head>
+<body>
+    <form>
+        <input type="text" autocomplete="on" name="familyname">
+        <input type="text" autocomplete="off" name="email">
+        <input type="submit" value="send data">
+    </form>
+    <div style="width: 400px;height: 300px;border:2px;border-style:solid"id="div1" ondrop="dropstart(event)"  ondragover="dragfinish(event)"></div>
+    <img id="img1"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_Mmr76b-5umVJOu9mRuQsari_XEoXyrd3Q&usqp=CAU"
+         draggable="true" ondragstart="dragstart(event)">
+
+
+</body>
+</html>
